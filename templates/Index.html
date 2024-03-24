@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Routes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #3A3A42; /* Dark background color */
+            color: #D2D2D0; /* Light text color */
+            box-sizing: content-box;
+        }
+
+        .menu {
+            position: fixed;
+            height: 100vh;
+            background: #F9D401; /* Yellow menu background */
+            width: 10vw;
+            box-shadow: 1px 0 2px rgba(0, 0, 0, .2);
+            transition: 1s;
+        }
+
+        .menu:hover {
+            width: 40vw;
+        }
+
+        .menu:hover ~ .container {
+            transform: perspective(80vw) rotateY(10deg) translateX(35vw) scaleY(1.2);
+        }
+
+        .menu:hover nav {
+            left: 20%;
+        }
+
+        nav {
+            position: absolute;
+            margin-top: 50%;
+            left: -1000px;
+            transition: .5s;
+        }
+
+        ul {
+            color: white;
+            text-transform: uppercase;
+            list-style-type: none;
+        }
+
+        li {
+            line-height: 2em;
+            letter-spacing: .3em;
+        }
+
+        a {
+            font-size: 30px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        a:hover {
+            color: #eee;
+        }
+
+        .container {
+            width: 90%;
+            margin-left: 10vw;
+            background: #3A3A42; /* Light container background */
+            transition: 1s;
+            transform-origin: left center;
+        }
+        .container2 {
+            font-size: 30px;
+            width: 90%;
+            margin-left: 10vw;
+            background: #3A3A42; /* Light container background */
+            transition: 1s;
+            transform-origin: left center;
+           
+        }
+
+        .content {
+            padding: 100px 20%;
+        }
+
+        .btn {
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #000;
+            cursor: pointer;
+            border: 3px solid;
+            padding: 0.25em 0.5em;
+            box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+            position: relative;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            background-color: transparent;
+            transition: box-shadow 0.3s ease, transform 0.1s ease;
+        }
+
+        .btn:active {
+            box-shadow: 0px 0px 0px 0px;
+            top: 5px;
+            left: 5px;
+        }
+
+        @media (min-width: 768px) {
+            .btn {
+                padding: 0.25em 0.75em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <h1 class="container2">Welcome to the API</h1>
+        <button class="btn" onclick="navigateTo('/home')">Home</button>
+        <button class="btn" onclick="navigateTo('/recent-release')">Recent Releases</button>
+        <button class="btn" onclick="navigateTo('/popular')">Popular Items</button>
+        <button class="btn" onclick="navigateTo('/top-airing')">Top Airing</button>
+    </div>
+
+    <script>
+        function navigateTo(route) {
+            window.location.href = route;
+        }
+    </script>
+</body>
+
+</html>
